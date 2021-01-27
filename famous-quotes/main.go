@@ -22,10 +22,10 @@ type Quote struct {
 }
 
 func main() {
-	username, _ = os.LookupEnv("QUOTES_USER")
-	password, _ = os.LookupEnv("QUOTES_PASSWORD")
-	database, _ = os.LookupEnv("QUOTES_DATABASE")
-	host, _ = os.LookupEnv("QUOTES_HOSTNAME")
+	username, _ = os.LookupEnv("DAGR_USER")
+	password, _ = os.LookupEnv("DAGR_PASSWORD")
+	database, _ = os.LookupEnv("DAGR_DATABASE")
+	host, _ = os.LookupEnv("DAGR_HOSTNAME")
 	DB = db_connect(username, password, database, host)
 	if DB == nil {
 		log.Printf("Could not connect to the databse: %s", database)
@@ -109,6 +109,7 @@ func setup() {
 		"Hell, if I could explain it to the average person, it wouldn't have been worth the Nobel prize.\n- Richard Feynman\n",
 		"Young man, in mathematics you don't understand things. You just get used to them.\n- John von Neumann\n",
 		"Those who can imagine anything, can create the impossible.\n- Alan Turing\n",
+		"Adding another cool quotes to the app!"
 	}
 
 	// Check if the databse connection is active
